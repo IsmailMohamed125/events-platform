@@ -1,21 +1,14 @@
-import LoginForm from "../_components/LoginForm";
 import Link from "next/link";
+import RegisterForm from "../_components/RegisterForm";
 import GoogleButton from "../_components/GoogleButton";
 
-export const metadata = {
-  title: "Login",
-};
-
-export default function Login() {
+export default function Register() {
   return (
-    <div className="flex flex-col gap-8 mt-10 items-center px-4 w-full min-h-screen ">
-      <h2
-        className="text-2xl font-semibold text-center max-w-xs md:max-w-md lg:max-w-lg"
-        tabIndex={0}
-      >
-        Sign in to access your dashboard area
+    <div className="flex flex-col gap-8 mt-10 items-center px-4 w-full min-h-screen">
+      <h2 className="text-2xl font-semibold text-center max-w-xs md:max-w-md lg:max-w-lg">
+        Register to access your dashboard area
       </h2>
-      <LoginForm />
+      <RegisterForm />
       <div
         className="flex items-center w-full max-w-sm gap-2"
         aria-label="or sign in with Google"
@@ -30,12 +23,12 @@ export default function Login() {
           aria-hidden="true"
         />
       </div>
-      <GoogleButton type="login" />
+      <GoogleButton type="signup" />
       <div className="text-center">
         <p className="text-sm text-muted-foreground">
-          Don&apos;t have an account?{" "}
-          <Link href="/register" className="text-primary-50 mr-1">
-            Register
+          Already have an account?{" "}
+          <Link href="/login" className="text-primary-50">
+            Login
           </Link>
         </p>
       </div>
