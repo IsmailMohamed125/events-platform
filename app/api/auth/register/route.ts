@@ -20,6 +20,12 @@ export async function POST(request: Request) {
       full_name: fullName,
     });
     console.log("User created:", user);
+    if (!user) {
+      return NextResponse.json(
+        { error: "Failed to create user" },
+        { status: 500 }
+      );
+    }
     return NextResponse.json({ user }, { status: 201 });
   } catch (error: unknown) {
     console.error("Registration error:", error);
